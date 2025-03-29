@@ -17,25 +17,28 @@ export default function RegistrationScreen() {
     <ImageBackground source={fondo} className="flex-1">
       {/* Overlay semitransparente para mejorar la legibilidad */}
       <View style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
-        
-        {/* Card centrada de registro */}
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          className="flex-1 justify-center items-center px-5"
-        >
-          <View className="bg-white rounded-xl shadow-lg p-6 w-full">
-            {/* Título con efecto de sombra */}
-            <Text
+        <View className="flex-1 justify-center items-center px-5 h-12">
+      <Text
               style={{
-                textShadowColor: "rgba(0, 0, 0, 0.8)",
+                textShadowColor: "rgba(0, 0, 0, 0.1)",
                 textShadowOffset: { width: 2, height: 2 },
                 textShadowRadius: 8,
               }}
-              className="text-center text-4xl font-bold mb-6"
+              className="text-left text-4xl font-bold text-white h-12"
             >
               Por un mundo{"\n"}
               <Text className="text-red-500">mejor</Text>
             </Text>
+            </View>
+        
+        {/* Card centrada de registro */}
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          className="flex-col justify-center items-center px-5 mb-32"
+        >
+          <View className="bg-white h-[25rem] flex flex-col justify-around rounded-xl shadow-lg p-6 w-full mb">
+            {/* Título con efecto de sombra */}
+            
 
             {/* Campos del formulario */}
             <TextInput
@@ -68,15 +71,15 @@ export default function RegistrationScreen() {
               placeholderTextColor="#666"
             />
 
-            {/* Botón de registro */}
-            <TouchableOpacity className="bg-purple-600 py-3 rounded">
+            </View>
+            <TouchableOpacity className="bg-[#2C0A71] py-3 rounded mt-4 w-full">
               <Text className="text-white text-lg font-semibold text-center">
                 Registrate
               </Text>
             </TouchableOpacity>
-          </View>
         </KeyboardAvoidingView>
-
+        
+          
         {/* Enlace inferior para navegar a Login */}
         <View className="absolute bottom-10 w-full px-5">
           <Link href={"/"} asChild>
