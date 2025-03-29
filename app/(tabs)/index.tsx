@@ -8,7 +8,6 @@ import {
   TextInput,
 } from "react-native";
 
-// Importa la imagen desde la carpeta assets.
 import fondo from "../../assets/images/fondo.png";
 import { Link } from "expo-router";
 
@@ -25,7 +24,11 @@ export default function Initial() {
               textShadowOffset: { width: 2, height: 2 },
               textShadowRadius: 8,
             }}
-            className={`${showForm ? 'text-white text-5xl font-bold text-right w-full mb-[13rem] ' : 'text-white text-5xl font-bold text-right w-full' }` }
+            className={`${
+              showForm
+                ? "text-white text-5xl font-bold text-right w-full mb-[13rem] "
+                : "text-white text-5xl font-bold text-right w-full"
+            }`}
           >
             Por un mundo{"\n"}
             <Text className="text-red-500">mejor</Text>
@@ -49,23 +52,30 @@ export default function Initial() {
                 secureTextEntry
                 className="bg-gray-100 p-3 rounded"
               />
-               
-            <TouchableOpacity className="flex items-end justify-center">
+
+              <TouchableOpacity className="flex items-end justify-center">
                 <Text className="text-blue-600 underline text-[.8rem]">
                   ¿Olvidaste tu contraseña?
                 </Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity className="bg-[#2C0A71] py-3 rounded mb-4">
+            <Link href={"/Dashboard"} asChild>
+              <TouchableOpacity
+                onPress={() => setShowForm(true)}
+                className="bg-[#2C0A71] py-3 rounded w-full"
+              >
                 <Text className="text-white text-lg font-semibold text-center">
                   Iniciar sesión
                 </Text>
               </TouchableOpacity>
+            </Link>
+            <Link href={"/register"} asChild>
               <TouchableOpacity className="mt-1">
-              <Text className="text-white text-base text-[.8rem] underline text-center">
-                ¿Sin cuenta? Regístrate
-              </Text>
-            </TouchableOpacity>
+                <Text className="text-white text-base text-[.8rem] underline text-center">
+                  ¿Sin cuenta? Regístrate
+                </Text>
+              </TouchableOpacity>
+            </Link>
           </View>
         ) : (
           <View className="absolute bottom-10 w-full px-5">

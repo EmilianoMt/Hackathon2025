@@ -17,70 +17,85 @@ export default function RegistrationScreen() {
     <ImageBackground source={fondo} className="flex-1">
       {/* Overlay semitransparente para mejorar la legibilidad */}
       <View style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
-        <View className="flex-1 justify-center items-center px-5 h-12">
-      <Text
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          className="flex-1 justify-center items-center px-5"
+        >
+          {/* Título ubicado arriba de la card, alineado al inicio (izquierdo) */}
+          <View className="w-full mb-4">
+            <Text
               style={{
-                textShadowColor: "rgba(0, 0, 0, 0.1)",
+                textShadowColor: "rgba(0, 0, 0, 0.8)",
                 textShadowOffset: { width: 2, height: 2 },
                 textShadowRadius: 8,
               }}
-              className="text-left text-4xl font-bold text-white h-12"
+              className="text-white text-4xl font-bold text-left"
             >
               Por un mundo{"\n"}
               <Text className="text-red-500">mejor</Text>
             </Text>
-            </View>
-        
-        {/* Card centrada de registro */}
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          className="flex-col justify-center items-center px-5 mb-32"
-        >
-          <View className="bg-white h-[25rem] flex flex-col justify-around rounded-xl shadow-lg p-6 w-full mb">
-            {/* Título con efecto de sombra */}
-            
+          </View>
 
-            {/* Campos del formulario */}
+          {/* Card del formulario */}
+          <View className="bg-white rounded-xl shadow-lg p-6 w-full">
+            {/* Campo: Nombre(s) */}
+            <Text className="text-gray-700 font-medium mb-1">Nombre(s)</Text>
             <TextInput
-              placeholder="Nombre(s)"
+              placeholder="Ingresa tu nombre(s)"
               className="bg-gray-100 p-3 rounded mb-3"
               placeholderTextColor="#666"
             />
+
+            {/* Campo: Apellido(s) */}
+            <Text className="text-gray-700 font-medium mb-1">Apellido(s)</Text>
             <TextInput
-              placeholder="Apellido(s)"
+              placeholder="Ingresa tu apellido(s)"
               className="bg-gray-100 p-3 rounded mb-3"
               placeholderTextColor="#666"
             />
+
+            {/* Campo: Correo electrónico */}
+            <Text className="text-gray-700 font-medium mb-1">
+              Correo electrónico
+            </Text>
             <TextInput
-              placeholder="Correo electrónico"
+              placeholder="Ingresa tu correo electrónico"
               keyboardType="email-address"
               autoCapitalize="none"
               className="bg-gray-100 p-3 rounded mb-3"
               placeholderTextColor="#666"
             />
+
+            {/* Campo: Contraseña */}
+            <Text className="text-gray-700 font-medium mb-1">Contraseña</Text>
             <TextInput
-              placeholder="Contraseña"
+              placeholder="Ingresa tu contraseña"
               secureTextEntry
               className="bg-gray-100 p-3 rounded mb-3"
               placeholderTextColor="#666"
             />
+
+            {/* Campo: Confirmar contraseña */}
+            <Text className="text-gray-700 font-medium mb-1">
+              Confirmar contraseña
+            </Text>
             <TextInput
-              placeholder="Confirmar contraseña"
+              placeholder="Confirma tu contraseña"
               secureTextEntry
               className="bg-gray-100 p-3 rounded mb-4"
               placeholderTextColor="#666"
             />
 
-            </View>
-            <TouchableOpacity className="bg-[#2C0A71] py-3 rounded mt-4 w-full">
+            {/* Botón de Registro */}
+            <TouchableOpacity className="bg-purple-600 py-3 rounded">
               <Text className="text-white text-lg font-semibold text-center">
-                Registrate
+                Regístrate
               </Text>
             </TouchableOpacity>
+          </View>
         </KeyboardAvoidingView>
-        
-          
-        {/* Enlace inferior para navegar a Login */}
+
+        {/* Enlace inferior para navegar al login */}
         <View className="absolute bottom-10 w-full px-5">
           <Link href={"/"} asChild>
             <TouchableOpacity>
