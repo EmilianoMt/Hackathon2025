@@ -1,8 +1,17 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<p align="center">
+  <img src="https://www.svgrepo.com/show/341805/expo.svg" width="150">
+</p>
 
-## Get started
+<p align="center">
+  <img src="https://hackathon.fif-uaq.mx/logos/logoHackathon.svg">
+</p>
+
+## Descripción
+
+Frontend del proyecto **Blue Scan** que fue realizado para el Hackathon Troyano 2025 que tiene como el finalidad el dar a conocer mas acerca del impacto que tienen los microplasticos en nuestro planeta.
+
+## Instalación
 
 1. Install dependencies
 
@@ -25,26 +34,11 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Integrantes
 
-When you're ready, run:
+* Brenda Lizbeth Ferrusca Erreguin
+* Paula Danliela Camacho Gomez
+* Carlos Ulises Rangel Rico
+* Jesus Eliseo Colunga Martínez
+* Marco Emiliano Portillo Martínez
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

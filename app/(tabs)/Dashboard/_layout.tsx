@@ -59,6 +59,14 @@ export default function TabLayout() {
           ),
         }}
       />
+      {/* Eliminamos uploadForn */}
+      <Tabs.Screen
+        name="uploadForn"
+        options={{
+          tabBarButton: () => null, // Ocultar del navbar
+          headerShown: false, // También ocultamos la cabecera si aplica
+        }}
+      />
     </Tabs>
   );
 }

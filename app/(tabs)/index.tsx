@@ -30,7 +30,6 @@ export default function Initial() {
           password: loginPassword,
         }),
       });
-      console.log("Response:", response);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -101,7 +100,6 @@ export default function Initial() {
                 </Text>
               </TouchableOpacity>
             </View>
-            {/* Botón para realizar el login */}
             <TouchableOpacity
               onPress={handleLogin}
               className="bg-[#2C0A71] py-3 rounded w-full"
