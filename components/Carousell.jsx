@@ -6,9 +6,9 @@ import Carousel from 'react-native-reanimated-carousel';
 const { width } = Dimensions.get('window');
 
 const images = [
-  { id: '1', uri: 'https://www.w3schools.com/w3images/fjords.jpg' },
-  { id: '2', uri: 'https://www.w3schools.com/w3images/lights.jpg' },
-  { id: '3', uri: 'https://www.w3schools.com/w3images/mountains.jpg' },
+  { id: '1', uri: '../assets/images/noticia_1.png' },
+  { id: '2', uri: '../assets/images/noticia_2.png' },
+  { id: '3', uri: '../assets/images/noticia_3.png' },
 ];
 
 const Carousell = () => {

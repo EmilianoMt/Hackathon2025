@@ -1,11 +1,7 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import { Platform } from "react-native";
-
 import { HapticTab } from "@/components/HapticTab";
 import { IconSymbol } from "@/components/ui/IconSymbol";
-import TabBarBackground from "@/components/ui/TabBarBackground";
-import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
@@ -20,9 +16,9 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarStyle: {
-          backgroundColor: '#110D22', 
-          borderTopWidth: 0, 
-          elevation: 5, 
+          backgroundColor: "#110D22",
+          borderTopWidth: 0,
+          elevation: 5,
           shadowOpacity: 0.1,
         },
       }}
@@ -39,9 +35,27 @@ export default function TabLayout() {
       <Tabs.Screen
         name="history"
         options={{
-          title: "history",
+          title: "History",
           tabBarIcon: ({ color }) => (
             <FontAwesome name="history" size={28} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="map"
+        options={{
+          title: "Maps",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="map" size={28} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="configuration"
+        options={{
+          title: "Configuration",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="gear" size={28} color={color} />
           ),
         }}
       />
