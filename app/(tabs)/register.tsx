@@ -38,7 +38,6 @@ export default function RegistrationScreen() {
         body: JSON.stringify({ name, lastName, email, password }),
       });
       
-      console.log("Response:", response);
       
       if (!response.ok) {
         const errorData = await response.json();
@@ -49,12 +48,10 @@ export default function RegistrationScreen() {
 
       const data = await response.json();
       console.log("Usuario registrado:", data);
-      // Al mostrar la alerta de éxito, aprovechamos el botón OK para redirigir
       Alert.alert("Éxito", "Usuario registrado exitosamente", [
         { text: "OK", onPress: () => router.push("/") },
       ]);
-      // También podrías limpiar el formulario o redirigir inmediatamente
-      // router.push("/") 
+      
     } catch (error) {
       console.error("Error al registrar usuario:", error);
       Alert.alert("Error", "No se pudo registrar el usuario.");
@@ -63,13 +60,11 @@ export default function RegistrationScreen() {
 
   return (
     <ImageBackground source={fondo} className="flex-1">
-      {/* Overlay semitransparente para mejorar la legibilidad */}
       <View style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.4)" }}>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           className="flex-1 justify-center items-center px-5"
         >
-          {/* Título ubicado arriba de la card, alineado al inicio */}
           <View className="w-full mb-4">
             <Text
               style={{
@@ -84,9 +79,7 @@ export default function RegistrationScreen() {
             </Text>
           </View>
 
-          {/* Card del formulario */}
           <View className="bg-white rounded-xl shadow-lg p-6 w-full">
-            {/* Campo: Nombre(s) */}
             <Text className="text-gray-700 font-medium mb-1">Nombre(s)</Text>
             <TextInput
               placeholder="Ingresa tu nombre(s)"
@@ -96,7 +89,6 @@ export default function RegistrationScreen() {
               placeholderTextColor="#666"
             />
 
-            {/* Campo: Apellido(s) */}
             <Text className="text-gray-700 font-medium mb-1">Apellido(s)</Text>
             <TextInput
               placeholder="Ingresa tu apellido(s)"
@@ -106,7 +98,6 @@ export default function RegistrationScreen() {
               placeholderTextColor="#666"
             />
 
-            {/* Campo: Correo electrónico */}
             <Text className="text-gray-700 font-medium mb-1">
               Correo electrónico
             </Text>
@@ -120,7 +111,6 @@ export default function RegistrationScreen() {
               placeholderTextColor="#666"
             />
 
-            {/* Campo: Contraseña */}
             <Text className="text-gray-700 font-medium mb-1">Contraseña</Text>
             <TextInput
               placeholder="Ingresa tu contraseña"
@@ -131,7 +121,6 @@ export default function RegistrationScreen() {
               placeholderTextColor="#666"
             />
 
-            {/* Campo: Confirmar contraseña */}
             <Text className="text-gray-700 font-medium mb-1">
               Confirmar contraseña
             </Text>
@@ -144,7 +133,6 @@ export default function RegistrationScreen() {
               placeholderTextColor="#666"
             />
 
-            {/* Botón de Registro */}
             <TouchableOpacity
               onPress={handleRegister}
               className="bg-purple-600 py-3 rounded"
@@ -156,7 +144,6 @@ export default function RegistrationScreen() {
           </View>
         </KeyboardAvoidingView>
 
-        {/* Enlace inferior para navegar al login */}
         <View className="absolute bottom-10 w-full px-5">
           <Link href={"/"} asChild>
             <TouchableOpacity>
