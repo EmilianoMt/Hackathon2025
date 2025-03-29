@@ -7,7 +7,7 @@ const CardReport = () => {
   return (
     <LinearGradient
       colors={["#7F00FF", "#0077FF"]}
-      className="mt-7 w-96 h-60 flex-row items-center p-5 rounded-md" // Cambié rounded-full a rounded-2xl
+      className="mt-7 w-96 h-40 flex-row items-center p-5 rounded-3xl" 
     >
       {/* Columna izquierda: Texto y botón */}
       <View className="flex-1">
@@ -23,8 +23,8 @@ const CardReport = () => {
       {/* Columna derecha: Imagen */}
       <View className="flex-1 items-center">
         <Image
-          source={require("../assets/images/icono_hexagono.png")}
-          className="w-40 h-40"
+          source={require("../assets/images/img_microts.png")}
+          className="w-32 h-32"
           resizeMode="contain"
         />
       </View>

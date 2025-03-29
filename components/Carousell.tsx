@@ -9,18 +9,18 @@ const imageWidth = width * 0.8;
 const images = [
   {
     id: "1",
-    uri: "https://www.w3schools.com/w3images/fjords.jpg",
-    description: "Fjords: Una majestuosa vista natural",
+    uri: "../assets/images/noticia_1.png",
+    description: "Microplástico: Un problema ambiental creciente",
   },
   {
     id: "2",
-    uri: "https://www.w3schools.com/w3images/lights.jpg",
-    description: "Lights: Las luces de la ciudad se iluminan",
+    uri: "../assets/images/noticia_2.png",
+    description: "Microplásticos en el agua: Un peligro para la salud",
   },
   {
     id: "3",
-    uri: "https://www.w3schools.com/w3images/mountains.jpg",
-    description: "Mountains: Imponentes montañas en el horizonte",
+    uri: "../assets/images/noticia_3.png",
+    description: "Contaminación: Un desafío global",
   },
 ];
 

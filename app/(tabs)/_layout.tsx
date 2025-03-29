@@ -20,7 +20,7 @@ export default function TabLayout() {
         tabBarStyle: { display: 'none' }, // Oculta el navbar
       }}
     >
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
@@ -31,7 +31,7 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
