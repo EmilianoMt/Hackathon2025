@@ -1,74 +1,97 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React, { useState } from "react";
+import {
+  ImageBackground,
+  StatusBar,
+  TouchableOpacity,
+  View,
+  Text,
+  TextInput,
+} from "react-native";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+// Importa la imagen desde la carpeta assets.
+import fondo from "../../assets/images/fondo.png";
+import { Link } from "expo-router";
 
-export default function HomeScreen() {
+export default function Initial() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText className='text-xl bg-red-600' type="title">Welcom</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ImageBackground source={fondo} className="flex-1">
+      <View style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+        <View className="flex-1 justify-center items-center px-5">
+          <Text
+            style={{
+              textShadowColor: "rgba(0, 0, 0, 0.8)",
+              textShadowOffset: { width: 2, height: 2 },
+              textShadowRadius: 8,
+            }}
+            className="text-white text-5xl font-bold text-right w-full mb-10"
+          >
+            Por un mundo{"\n"}
+            <Text className="text-red-500">mejor</Text>
+          </Text>
+        </View>
+
+        {showForm ? (
+          <View className="absolute bottom-10 w-full px-5">
+            <View className="bg-white rounded-xl shadow-lg p-6">
+              <Text className="text-center text-lg font-bold text-gray-800 mb-4">
+                ¡Te damos la bienvenida!
+              </Text>
+
+              <TextInput
+                placeholder="mail-ejemplo@correo.com"
+                className="bg-gray-100 p-3 rounded mb-4"
+              />
+
+              <TextInput
+                placeholder="*********"
+                secureTextEntry
+                className="bg-gray-100 p-3 rounded mb-4"
+              />
+
+              <TouchableOpacity className="bg-purple-600 py-3 rounded mb-4">
+                <Text className="text-white text-lg font-semibold text-center">
+                  Iniciar sesión
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity>
+                <Text className="text-center text-blue-600 underline">
+                  ¿Olvidaste tu contraseña?
+                </Text>
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity className="mt-4">
+              <Text className="text-white text-base underline text-center">
+                ¿Sin cuenta? Regístrate
+              </Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <View className="absolute bottom-10 w-full px-5">
+            <TouchableOpacity
+              onPress={() => setShowForm(true)}
+              className="bg-purple-600 py-3 rounded w-full"
+            >
+              <Text className="text-white text-lg font-semibold text-center">
+                Iniciar sesión
+              </Text>
+            </TouchableOpacity>
+
+            <Link href={"/register"} asChild>
+              <TouchableOpacity className="mt-4">
+                <Text className="text-white text-base underline text-center">
+                  ¿Sin cuenta? Regístrate
+                </Text>
+              </TouchableOpacity>
+            </Link>
+          </View>
+        )}
+      </View>
+
+      <StatusBar barStyle="light-content" />
+    </ImageBackground>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
